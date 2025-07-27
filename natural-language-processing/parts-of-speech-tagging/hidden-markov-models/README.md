@@ -165,4 +165,90 @@ Using a HMM, Mary can try predicting whether it rains on a day for John, treatin
 
 ### Applying a HMM for POS tagging
 
+For POS tagging, the words (e.g. "the", "father") are _observable_, and the POS tags (e.g. "noun", "verb") that we would like to assign to each of the words are _hidden_.
+
+Hence, a HMM for POS tagging would have a $A$ probability transition matrix that contains the transition probabilities for the tags, and the $B$ observation likelihoods would have the probabilities that given a tag, a word would be associated with it.
+
+The tag transition probabilities in $A$ can be computed with a maximum likelihood estimate using the _counts_ of tags found in a _corpus_ that is selected that is annotated with tags. Out of the number of times we see a tag in the corpus, it is counted how often that tag is followed by a certain tag:
+
+$$
+\begin{align}
+P(t_{i}|t_{i-1})=\frac{count(t_{i-1}, t_{i})}{count(t_{i-1})}
+\end{align}
+\tag{3}
+$$
+
+Similarly, the emissions probabilities in $B$ can calculated with a maximum likelihood estimate that, given a tag, a word is associated with it:
+
+$$
+\begin{align}
+P(w_{i}|t_{i})=\frac{count(w_{i},t_{i})}{count(t_{i})}
+\end{align}
+\tag{4}
+$$
+
+Note that when the objective of an exercise to find the most appropriate tag for a word, it may seem more intuitive to, given a word, find a tag that would be best associated with it, which may make the probabilities in $B$ seem a bit counterintuitive.
+
+### HMM tagging for decoding
+
+The process of determining a sequence of hidden variables corresponding to a sequence of observable variables (observations) is called **decoding**. Formally, for a HMM, decoding involves finding the most probable sequence of states $q_{1}\dots q_{T}$ given an HMM $\lambda=(A,B)$ and a sequence of observations $o_{1}\dots o_{T}$.
+
+For POS tagging, the objective is to, given a sequence of $n$ words $w_{1},\dots,w_{n}$, choose the sequence of tags $t_{1},\dots,t_{n}$ that is most probable:
+
+$$
+\begin{align}
+\hat{t}\_{1:n}=\underset{t_{1}\dots t_{n}}{argmax}P(t_{1}\dots t_{n}|w_{1}\dots w_{n})
+\end{align}
+\tag{5}
+$$
+
+Bayes' rule (see ["Bayes Theorem"](../../../math/probability/bayes-theorem/README.md)) can be applied to do this computation:
+
+$$
+\begin{align}
+\hat{t}\_{1:n}=\underset{t_{1}\dots t_{n}}{argmax}\frac{P(t_{1}\dots t_{n})P(w_{1}\dots w_{n}|t_{1}\dots t_{n})}{P(w_{1}\dots w_{n})}
+\end{align}
+\tag{6}
+$$
+
+Since the denominator of (6) does not depend on $t_{1}\dots t_{n}$, it can be removed:
+
+$$
+\begin{align}
+\hat{t}\_{1:n}=\underset{t_{1}\dots t_{n}}{argmax}P(t_{1}\dots t_{n})P(w_{1}\dots w_{n}|t_{1}\dots t_{n})
+\end{align}
+\tag{7}
+$$
+
+HMMs for POS tagging further make two assumptions that help simplify calculations. The first is that the probability of a tag is dependent only on the previous tag (Markov assumption):
+
+$$
+\begin{align}
+P(t_{1}\dots t_{n})\approx \prod_{i=1}^{n} P(t_{i}|t_{i-1})
+\end{align}
+\tag{8}
+$$
+
+The second is that the probability of a word appearing only depends on its own tag (output independence):
+
+$$
+\begin{align}
+P(w_{1}\dots w_{n}|t_{1}\dots t_{n}) \approx \prod_{i=1}^{n}P(w_{i}|t_{i})
+\end{align}
+\tag{9}
+$$
+
+With the assumptions in (8) and (9), (7) then simplifies to:
+
+$$
+\begin{align}
+\hat{t}\_{1:n}=\underset{t_{1}\dots t_{n}}{argmax}\prod_{i=1}^{n}P(t_{i}|t_{i-1})P(w_{i}|t_{i})
+\end{align}
+\tag{10}
+$$
+
+Note that the probabilities in (10) correspond neatly to the probabilities in (3) and (4), which were for the $A$ transition probability matrix and the $B$ emission probability.
+
+### The Viterbi Algorithm
+
 (_contents being prepared_)
