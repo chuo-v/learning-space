@@ -8,5 +8,6 @@ While there is no particular audience I have in mind to be on the receiving end 
 In addition to explanations about topics, there will also be some code snippets that resulted from the learning process.
 
 Here are some links to most recently added content:
+- [N-Gram Language Models](natural-language-processing/language-models/n-gram-language-models/)
 - [Hidden Markov Models](natural-language-processing/parts-of-speech-tagging/hidden-markov-models)
 - [Bayes Theorem](math/probability/bayes-theorem)
