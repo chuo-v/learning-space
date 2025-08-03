@@ -249,6 +249,6 @@ $$
 
 Note that the probabilities in (10) correspond neatly to the probabilities in (3) and (4), which were for the $A$ transition probability matrix and the $B$ emission probability.
 
-### The Viterbi Algorithm
+### Viterbi algorithm
 
-(_contents being prepared_)
+The **Viterbi algorithm** is the decoding algorithm for HMMs. More details about it can be found in the [viterbi-algorithm/](viterbi-algorithm/) subdirectory.
