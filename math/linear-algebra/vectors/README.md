@@ -74,3 +74,93 @@ For vectors $\boldsymbol{u}$ and $\boldsymbol{v}$ in $\mathbb{R}^{n}$, if $\bold
 $$
 proj_{\boldsymbol{u}}(\boldsymbol{v})=\biggl(\frac{\boldsymbol{u}\cdot\boldsymbol{v}}{\lVert\boldsymbol{u}\rVert^{2}}\biggr)\boldsymbol{u}=\biggl(\frac{\boldsymbol{u}\cdot\boldsymbol{v}}{\boldsymbol{u}\cdot\boldsymbol{u}}\biggr)\boldsymbol{u}
 $$
+
+### Equations of a line
+
+The **normal form** of the equation of a line $L$ in in $\mathbb{R}^{2}$ is
+
+$$
+\boldsymbol{n}\cdot(\boldsymbol{x}-\boldsymbol{p})=0
+$$
+
+where $\boldsymbol{n}\neq 0$ is the normal vector for $L$, and $\boldsymbol{p}$ is a point on $L$.
+
+The **vector form** of the equation of a line $L$ in in $\mathbb{R}^{2}$ or $\mathbb{R}^{3}$ is
+
+$$
+\boldsymbol{x}=\boldsymbol{p}+t\boldsymbol{d}
+$$
+
+where $\boldsymbol{d}\neq\boldsymbol{0}$ is a direction vector for $L$, and $\boldsymbol{p}$ is a point on $L$.
+
+### Equations of a plane
+
+The **normal form** of the equation of a plane $P$ in in $\mathbb{R}^{3}$ is
+
+$$
+\boldsymbol{n}\cdot(\boldsymbol{x}-\boldsymbol{p})=0
+$$
+
+where $\boldsymbol{n}\neq 0$ is the normal vector for $P$, and $\boldsymbol{p}$ is a point on $P$.
+
+The **vector form** of the equation of a plane $P$ in in $\mathbb{R}^{3}$ is
+
+$$
+\boldsymbol{x}=\boldsymbol{p}+s\boldsymbol{d}+t\boldsymbol{e}
+$$
+
+where $\boldsymbol{d}\neq\boldsymbol{0}$ and $\boldsymbol{e}\neq\boldsymbol{0}$ are a direction vectors for $P$ that are not parallel to each other, and $\boldsymbol{p}$ is a point on $P$.
+
+### Cross Product
+
+A way to get the normal vector for a plane in $\mathbb{R}^{3}$ with the following vector form is the cross product of $\boldsymbol{d}$ and $\boldsymbol{e}$.
+
+$$
+\boldsymbol{x}=\boldsymbol{p}+s\boldsymbol{d}+t\boldsymbol{e}
+$$
+
+The cross product of $\boldsymbol{d}$ and $\boldsymbol{e}$ is
+
+$$
+\boldsymbol{d} \times \boldsymbol{e}=
+\begin{bmatrix}
+d_{2}e_{3}-d_{3}e_{2} \\
+d_{3}e_{1}-d_{1}e_{3} \\
+d_{1}e_{2}-d_{2}e_{1}
+\end{bmatrix}
+$$
+
+where $d_{i}$ and $e_{i}$ for $i=1,2,3$ are the elements of $\boldsymbol{d}$ and $\boldsymbol{e}$, repsectively.
+
+## Miscellaneous Formulas
+
+### "Balancing Formula" for Dimensions
+
+The "balancing formula" gives the relationship between the following
+- dimension of an object (e.g. line, plane)
+- number of equations needed to represent the object
+- dimension of the space (e.g. 2 for $\mathbb{R}^{2}$, 3 for $\mathbb{R}^{3}$)
+
+as
+
+$$
+(dimension\ of\ the\ object)\ +\ (number\ of\ equations)=dimension\ of\ the\ space
+$$
+
+e.g. A plane in $\mathbb{R}^{3}$ needs $3-2=1$ equation.
+
+### Distances to a line
+
+If line $L$ is in $\mathbb{R}^{2}$ with the general form $ax+by=c$, then the distance from a point $P=(x_{0},y_{0})$ to the line is given as
+
+$$
+\frac{\lvert ax_{0}+by_{0}-c \rvert}{\sqrt{a^{2}+b^{2}}}
+$$
+
+### Distances to a plane
+
+If plane $P$ is in $\mathbb{R}^{3}$ with the general form $ax+by+cz=d$, then the distance from a point $P=(x_{0},y_{0},z_{0})$ to the plane is given as
+
+$$
+\frac{\lvert ax_{0}+by_{0}+cz_{0}-d \rvert}{\sqrt{a^{2}+b^{2}+c^{2}}}
+$$
