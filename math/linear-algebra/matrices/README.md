@@ -77,7 +77,9 @@ Let $A$ be a $m \times n$ matrix. Then
 
 ### The Fundamental Theorem of Invertible Matrices
 
-Let $A$ be a $n \times n$ matrix. Then the following statements are equivalent:
+Let $A$ be a $n \times n$ matrix, and let $T: Y\rightarrow Z$ be a linear transformation where $A$ is the matrix of $[T]_{C \leftarrow B}$ with respect to the bases $B$ and $C$ of $Y$ and $Z$, respectively.
+
+Then the following statements are equivalent:
 - $A$ is invertible
 - $A\boldsymbol{x}=\boldsymbol{b}$ has a unique solution for every $\boldsymbol{b}$ in $\mathbb{R}^{n}$
 - There is only the trivial solution for $A\boldsymbol{x}=\boldsymbol{0}$
@@ -93,6 +95,11 @@ Let $A$ be a $n \times n$ matrix. Then the following statements are equivalent:
 - $rank(A)=n$
 - $det(A)\neq 0$, where $det(A)$ is the determinant of $A$
 - 0 is not an eigenvalue of $A$
+- $T$ is invertible
+- The kernel of $T$ is $\\{\boldsymbol{0}\\}$
+- The range of $T$ is $Z$
+- $T$ is one-to-one
+- $T$ is onto
 
 
 ## Definitions
