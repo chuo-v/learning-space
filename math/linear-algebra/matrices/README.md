@@ -100,6 +100,7 @@ Then the following statements are equivalent:
 - The range of $T$ is $Z$
 - $T$ is one-to-one
 - $T$ is onto
+- $0$ is _not_ a singular value of $A$
 
 
 ## Definitions
