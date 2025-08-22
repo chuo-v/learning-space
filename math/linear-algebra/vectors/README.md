@@ -130,7 +130,7 @@ d_{1}e_{2}-d_{2}e_{1}
 \end{bmatrix}
 $$
 
-where $d_{i}$ and $e_{i}$ for $i=1,2,3$ are the elements of $\boldsymbol{d}$ and $\boldsymbol{e}$, repsectively.
+where $d_{i}$ and $e_{i}$ for $i=1,2,3$ are the elements of $\boldsymbol{d}$ and $\boldsymbol{e}$, respectively. For more details, see [Cross Product](./cross-product/).
 
 ## Miscellaneous Formulas
 
